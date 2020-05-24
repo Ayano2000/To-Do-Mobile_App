@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using SQLitePCL;
 using To_Do_Application.DTO;
 
 namespace To_Do_Application.Constants
@@ -17,6 +19,8 @@ namespace To_Do_Application.Constants
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //Debug.WriteLine("GETTING INTO MY DB METHOD");
+            //System.Data.SQLite.SQLiteConnection.CreateFile("todo.db");
             optionsBuilder.UseSqlite($"Data Source=todo.db");
         }
 
@@ -34,7 +38,7 @@ namespace To_Do_Application.Constants
                 },
                 new User()
                 {
-                    Id = 1,
+                    Id = 2,
                     name = "Carah",
                     surname = "Prinsloo",
                     username = "carahprinsloo99@gmail.com",

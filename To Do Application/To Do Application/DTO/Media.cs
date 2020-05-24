@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 
 namespace To_Do_Application.DTO
@@ -15,7 +16,7 @@ namespace To_Do_Application.DTO
         // Media details
         public string name { get; set; }
         public string description { get; set; }
-        public Stream media { get; set; }
+        public byte[] media { get; set; }
         
     }
 }
